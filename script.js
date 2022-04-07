@@ -1,6 +1,6 @@
 let numPhoto = 2;
 var i=0,j=0,k=0;
-var speed=70;
+var speed=200;
 var arrowOption = "exp";
 var expi = 0, proji = 0;
 const summary = "Hello! My name is Alex Torres. I am pursuing the Google Data Analytics Certificate. Prior to this, I got a JavaScript Developer certificate from W3Schools. Also, I studied Systems Engineering and Business. In my previous experience I resolved management problems. To achieve this, I not only use my management skills also I developed applications and tools that use data to make decisions. Now, I am working to upgrade my professional skills because I’m Interested to excel as a developer or data analyst.";
@@ -16,11 +16,12 @@ const experiences = [["Web developer - Freelancer","Volar, Seattle, WA","01/2021
 const project = "-------------------------PROJECTS-------------------------";
 const projects =  [["Web Development","Designed, built, and developed a websites using WordPress, Shopify, HTML, CSS, JavaScript, Bootstrap.","• Portfolio • Seattle, WA	• 04/2022 • <a href='https://alextorreswa.github.io/portfolio/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/portfolio' target='_blank'>Git Hub</a> <br/> • Task List Web Application • Washington DC	• 03/2022 • <a href='https://alextorreswa.github.io/taskList/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/taskList' target='_blank'>Git Hub</a> <br/>• Tourist Agency • Seattle, WA	• 03/2022 • <a href='https://alextorreswa.github.io/CozumelTours/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/CozumelTours' target='_blank'>Git Hub</a> <br/>• Centro Familiar Cristiano • Seattle, WA	• 11/2021 • <a href='https://cfcwa.com/' target='_blank'>Web page</a> <br/>• Orkid Web Pet Store • Seattle, WA	11/2018"],
                   ["Databases and Web Application","Design and build of relational databases with forms, SQL queries, reports, web forms, dashboards. Collect data, Analysis and Visualization","• Administrative System Information • Perenco Oil Company • 06/2015 <br/>• Maintenance Database  • Perenco Oil Company • 12/2007 <br/>• Corporate Social Responsibility Database • Perenco Oil Company • 12/2006 <br/>• Medical Appointments Application • Capresoca IPS • 06/2003"]];
-const skills = ["DATA ANALYSIS","DATA CLEANSING","SQL","R PROGRAMMING","RSTUDIO","SPREADSHEETS","TABLEAU","DATA COLLECTION","METADATA","DATA ETHICS","HTML","CSS","JAVASCRIPT","BOOTSTRAP","VBA","MS ACCESS","MS EXCEL","ASP.NET","SHOPIFY","WORDPRESS","GITHUB","COREL SUIT","SCRUM","BASH","SAP","BILINGUAL","SPANISH"];                   
+const skills = ["DATA∙ANALYSIS","DATA∙CLEANSING","SQL","R∙PROGRAMMING","RSTUDIO","SPREADSHEETS","TABLEAU","DATA∙COLLECTION","METADATA","DATA∙ETHICS","HTML","CSS","JAVASCRIPT","BOOTSTRAP","VBA","MS∙ACCESS","MS∙EXCEL","ASP∙NET","SHOPIFY","WORDPRESS","GITHUB","COREL∙SUIT","SCRUM","BASH","SAP","BILINGUAL","SPANISH"];                   
 let skillsShuffle =  shuffle(skills);
+skillsShuffle.unshift("AVOID∙∙∙LETTERS","∙∙∙∙∙∙AND∙∙∙∙∙∙","USE∙∙THE∙ARROWS","<∙∙∙GO∙∙UP!∙∙∙>","PLAY∙THIS∙GAME!","KNOW∙∙MY∙SKILLS");
 //console.log(skillsShuffle);
 let matrix = [];
-let gameY = 0, gameX = 0;
+let gameY = 0, gameX = 7;
 
 /////////////////////////////////////////////////////////////////////////////////////
 //                      GAME SKILLS
@@ -61,10 +62,13 @@ function Matrix() {
 
       if(skillsShuffle[i+1]!==undefined && (str.length+skillsShuffle[i+1].length<=14)){
          str.push('∙');
-         str.push.apply(str,skillsShuffle[i+1].split(''))
-         //console.log(str);         
+         str.push.apply(str,skillsShuffle[i+1].split(''))      
          i++;
       }        
+
+      if ((y)%3!=0) {
+         x=15-str.length;
+      }
 
       for(j in str) {
          matrix[y][x] = str[j];
@@ -73,7 +77,26 @@ function Matrix() {
       x=0;
       y=y+2;           
    }
-
+ 
+   str = ["*","*","*","*","*","*","*","*","*","*","*","*","*","*","*"]
+   for(j in str) {
+      matrix[y][x] = str[j];    
+      x++;   
+   }
+   x=0;
+   y=y+2;   
+   for(j in str) {
+      matrix[y][x] = str[j];    
+      x++;   
+   }
+   str = ["<","-","Y","O","U"," ","D","I","D"," ","I","T","!","-",">"]
+   x=0;
+   y=y-1;     
+   for(j in str) {
+      matrix[y][x] = str[j];    
+      x++;   
+   }   
+   
 }
 FillMatrix();
 Matrix();
@@ -86,19 +109,50 @@ function renderMatrix(start) {
    for(index=start;index<=start+11;index++) {
       cad = matrix[index].join('') + '<br/>' + cad;
    }   
-   document.getElementById("game").innerHTML = cad;
+   document.getElementById("game").innerHTML = cad;      
 }
+
+function renderCursorGame() {
+   let cad = "";   
+   for(index=0;index<gameX;index++) {
+      cad += "&nbsp";
+   }    
+   cad += "█";
+   document.getElementById("gameCursor").innerHTML = cad;   
+}
+
 
 document.addEventListener('keydown', (event) => {
    const keyName = event.key;
-   if(event.key == 'ArrowUp'){   
-      alert("hola");      
-      gameY++;
+   if(event.key == 'ArrowUp'){      
+      if (gameY<=60) gameY++;
       renderMatrix(gameY);   
+      evalGame();      
    } 
-
+   if(event.key == 'ArrowDown'){     
+      if (gameY>0) gameY--;      
+      renderMatrix(gameY);  
+      evalGame();       
+   } 
+   if(event.key == 'ArrowLeft'){   
+      if (gameX>0) gameX--;      
+      renderCursorGame();
+      evalGame();      
+   } 
+   if(event.key == 'ArrowRight'){   
+      if (gameX<14) gameX++;
+      renderCursorGame();
+      evalGame();
+   } 
  });
 
+ function evalGame() {
+   if(matrix[gameY][gameX]=="*") {
+      alert("YOU WON!");
+   } else if(matrix[gameY][gameX]!="∙") {
+      alert("Oh Noooo! You touched a letter.");
+   }   
+ }
 
 
 // console.log(matrix);
@@ -118,7 +172,7 @@ document.getElementById("arrowDown").onmouseup = function() {arrowDownClick()};
 document.getElementById("arrowUp").onmouseup = function() {arrowUpClick()};
 document.getElementById("project").onmouseup = function() {projectClick()};
 document.getElementById("resume").onmouseup = function() {resumeClick()};
-
+document.getElementById("game").onmouseenter = function() {showInstructions()};
 
 
 ////////////////////////////////////////////////////////////////
@@ -169,7 +223,6 @@ function experienceClick(){
    typeWriterXLine();
    arrowOption = "exp";
    renderExp();
-   console.log(expi);
 }
 
  function typeWriterXLine() {
@@ -211,7 +264,6 @@ function projectClick(){
    typeWriterPLine();
    arrowOption = "proj";
    renderProj();
-   console.log(expi);
 }
 
  function typeWriterPLine() {
@@ -265,6 +317,11 @@ function arrowUpClick() {
 //                   SUPPORT FUNCTIONS 
 ///////////////////////////////////////////////
 
+function showInstructions() {
+   alert("Entre");
+   document.getElementById("invitation").hidden = true;
+}
+
 function resumeClick(){
    window.open("./resume.pdf");
 }
@@ -282,7 +339,9 @@ function hideTitles() {
    document.getElementById("name").style.visibility = "hidden";
    document.getElementById("project").style.visibility = "hidden";
    document.getElementById("resume").style.visibility = "hidden";
-   document.getElementById("experience").style.visibility = "hidden";     
+   document.getElementById("experience").style.visibility = "hidden";  
+   document.getElementById("game").style.visibility = "hidden";   
+   document.getElementById("gameCursor").style.visibility = "hidden";           
 }
 
 function showTitles() {
@@ -293,5 +352,7 @@ function showTitles() {
    document.getElementById("name").style.visibility = "visible";
    document.getElementById("project").style.visibility = "visible";
    document.getElementById("resume").style.visibility = "visible";
-   document.getElementById("experience").style.visibility = "visible";    
+   document.getElementById("experience").style.visibility = "visible"; 
+   document.getElementById("game").style.visibility = "visible";   
+   document.getElementById("gameCursor").style.visibility = "visible";         
 }

@@ -125,7 +125,7 @@ h4 {
    text-align: center;  
    color: white;   
    background-size:77%;
-   background-position: 50% 50%;
+   background-position: 47% 50%;
    background-image: url('./projects.png'); 
    box-shadow: 2px 2px 2px 1px rgba(235, 0, 0, 0.658);   
  }
@@ -145,7 +145,7 @@ h4 {
    margin: 20px 10px; 
    color: white;   
    background-size:180%;
-   background-position: 20% 45%;
+   background-position: 13% 46%;
    background-image: url('./resume.png');
    box-shadow: 2px 2px 2px 1px rgba(69, 180, 69, 0.658);
  }
@@ -163,7 +163,7 @@ h4 {
    margin: 20px 10px; 
    text-align: center; 
    background-size:90%;
-   background-position: 30% 48%;
+   background-position: 40% 50%;
    background-image: url('./experience.png');   
    box-shadow: 2px 2px 2px 1px rgba(252, 228, 11, 0.658);
  }
@@ -191,8 +191,8 @@ h4 {
 
 
 .thirteen {
-  /* display: inline;
-  visibility: hidden; */
+  display: inline;
+  /* visibility: hidden; */
   grid-row: 7 / 12;
   grid-column: 12 / 14;
   margin-right: 45px;
@@ -214,6 +214,37 @@ h4 {
   font-size:large;
   font-family: monospace;
   color: aquamarine;
+}
+
+#invitation {
+  background-color:rgba(46, 46, 46, 0.644);
+  grid-row: 7 / 12;
+  grid-column: 12 / 14;
+  margin-right: 45px;
+  margin-bottom: 5px;
+  margin-top: 5px;  
+}
+
+#invitation h4 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: x-large;
+  text-align: center;
+  /* transform: rotate(-90deg);; */
+}
+
+#invitation h2 {
+  font-size: large;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;  
+  text-align: center;  
+}
+
+#invitation p {
+  color: #fff;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .ten {
