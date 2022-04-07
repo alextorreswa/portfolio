@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Work+Sans:wght@400;500;800&display=swap');
+
 *{
   box-sizing: border-box;
   padding: 0;
@@ -94,6 +96,10 @@ h4 {
 
 .two:hover {
   cursor: pointer;
+}
+
+.two p {
+  font-family: 'Orbitron', sans-serif;
 }
 
  .three {
@@ -200,6 +206,7 @@ h4 {
   border-color: aqua; */
 }
 
+
 #game {
   margin-top: 10px;
   margin-left: 10px;
@@ -214,6 +221,12 @@ h4 {
   font-size:large;
   font-family: monospace;
   color: aquamarine;
+
+    width: 0px;
+    background: aqua;
+    opacity: 50;
+    display: inline-block;
+    animation: blink 1s linear infinite alternate;  
 }
 
 #invitation {

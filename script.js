@@ -1,6 +1,6 @@
 let numPhoto = 2;
 var i=0,j=0,k=0;
-var speed=200;
+var speed=40;
 var arrowOption = "exp";
 var expi = 0, proji = 0;
 const summary = "Hello! My name is Alex Torres. I am pursuing the Google Data Analytics Certificate. Prior to this, I got a JavaScript Developer certificate from W3Schools. Also, I studied Systems Engineering and Business. In my previous experience I resolved management problems. To achieve this, I not only use my management skills also I developed applications and tools that use data to make decisions. Now, I am working to upgrade my professional skills because I’m Interested to excel as a developer or data analyst.";
@@ -22,7 +22,8 @@ skillsShuffle.unshift("AVOID∙∙∙LETTERS","∙∙∙∙∙∙AND∙∙∙∙
 //console.log(skillsShuffle);
 let matrix = [];
 let gameY = 0, gameX = 7;
-
+const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst"];
+let positionInd = 0;
 /////////////////////////////////////////////////////////////////////////////////////
 //                      GAME SKILLS
 /////////////////////////////////////////////////////////////////////////////////////
@@ -100,8 +101,20 @@ function Matrix() {
 }
 FillMatrix();
 Matrix();
-//for(i in matrix) 
 renderMatrix(gameY);
+setInterval(changePosition, 5000);
+
+function changePosition() {
+
+   if(positionInd<positions.length) {
+      document.getElementById("roles").innerHTML = positions[positionInd];
+      positionInd++;     
+   }
+   else {
+   positionInd=0;
+   }
+}
+
 
 
 function renderMatrix(start) {
@@ -148,9 +161,27 @@ document.addEventListener('keydown', (event) => {
 
  function evalGame() {
    if(matrix[gameY][gameX]=="*") {
-      alert("YOU WON!");
+      Swal.fire({
+         icon: 'success',
+         title: 'Good Job',
+         text: 'Your company could get an excellent professional with my skills!',
+       })
+      gameY = 0, gameX = 7;
+      FillMatrix();
+      Matrix();      
+      renderCursorGame(); 
+      renderMatrix(gameY);          
    } else if(matrix[gameY][gameX]!="∙") {
-      alert("Oh Noooo! You touched a letter.");
+      Swal.fire({
+         icon: 'error',
+         title: 'Oops...You lost!',
+         text: 'You touched a letter. Try again!'
+       })      
+      gameY = 0, gameX = 7;
+      FillMatrix();
+      Matrix();      
+      renderCursorGame(); 
+      renderMatrix(gameY);            
    }   
  }
 
@@ -196,6 +227,10 @@ function profilePhotoOME() {
 //////////////////////////////////////////////////////////
 
 function profilePhotoClick() { 
+   i = 0;
+   j = 0;
+   k = 0;
+   document.getElementById("textScreen").innerHTML = "";   
    hideTitles(); 
    document.getElementById("screen").hidden = false;
    typeWriter(); 
@@ -218,6 +253,10 @@ function typeWriter() {
 /////////////////////////////////////////////////////
 
 function experienceClick(){
+   i = 0;
+   j = 0;
+   k = 0;
+   document.getElementById("textScreen").innerHTML = "";   
    hideTitles(); 
    document.getElementById("screen").hidden = false;
    typeWriterXLine();
@@ -258,7 +297,10 @@ function renderExp() {
 /////////////////////////////////////////////////////
 
 function projectClick(){
-
+   i = 0;
+   j = 0;
+   k = 0;
+   document.getElementById("textScreen").innerHTML = "";
    hideTitles(); 
    document.getElementById("screen").hidden = false;
    typeWriterPLine();
