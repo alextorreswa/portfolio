@@ -27,7 +27,7 @@ h1 {
   color: white;    
   font-family: "Yellowtail", sans-serif;
   font-weight: 300;  
-  font-size: 6vw;    
+  font-size: 5vw;    
   animation: pulsate 0.11s ease-in-out infinite alternate;      
 }
 
@@ -188,6 +188,34 @@ h4 {
   margin-right: 0px;
 }
 
+
+
+.thirteen {
+  /* display: inline;
+  visibility: hidden; */
+  grid-row: 7 / 12;
+  grid-column: 12 / 14;
+  margin-right: 45px;
+  /* border-style: solid;  
+  border-color: aqua; */
+}
+
+#game {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size:large;
+  font-family: monospace;
+  color: aqua;
+}
+
+#gameCursor {
+  margin-top: 212px;
+  margin-left: 10px;
+  font-size:large;
+  font-family: monospace;
+  color: aquamarine;
+}
+
 .ten {
   display: inline;
   visibility: hidden;
@@ -271,6 +299,11 @@ h6 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.pdfContainer {
+  width: 100%;
+  max-width: 25px;
+  height: auto;
+}
 
 .closeText {
   display: inline;

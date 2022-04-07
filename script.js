@@ -1,6 +1,6 @@
 let numPhoto = 2;
 var i=0,j=0,k=0;
-var speed=50;
+var speed=70;
 var arrowOption = "exp";
 var expi = 0, proji = 0;
 const summary = "Hello! My name is Alex Torres. I am pursuing the Google Data Analytics Certificate. Prior to this, I got a JavaScript Developer certificate from W3Schools. Also, I studied Systems Engineering and Business. In my previous experience I resolved management problems. To achieve this, I not only use my management skills also I developed applications and tools that use data to make decisions. Now, I am working to upgrade my professional skills because I’m Interested to excel as a developer or data analyst.";
@@ -14,9 +14,100 @@ const experiences = [["Web developer - Freelancer","Volar, Seattle, WA","01/2021
                      ["Administrative Superintendent","Perenco Oil Company, Yopal, Colombia","07/2006 - 12/2012","• Designated business requirements into meaningful and explanatory visualization in dashboards and reports. through ASP. NET and the company’s intranet with accuracy and attention to detail. <br/>• Collaborated with internal teams to analyze datasets and identify opportunities. <br/>• Performed frequent ad hoc reporting on demand to assist Operations Management with decision making."],
                      ["Maintenance Coordinator","Perenco Oil Company, Yopal, Colombia","05/2004 - 06/2006","• Scheduled maintenance services for equipment with statistical control of spare parts, labor, lubricants. <br/>• Gathered, validated, translated and imported data with quality assurance and integrity to successfully manage. Build datasets and queries to drive decisions. <br/>• Analyzed lost productivity, failures, costs to guarantee the reliability and ready availability of equipment and labor."]];
 const project = "-------------------------PROJECTS-------------------------";
-const projects =  [["Web Development","Designed, built, and developed a websites using WordPress, Shopify, HTML, CSS, JavaScript, Bootstrap.","• Portfolio • Seattle, WA	• 04/2022 • <a href='https://alextorreswa.github.io/CozumelTours/'>Web page</a> • <a href='https://github.com/alextorreswa/CozumelTours'>Git Hub</a> <br/>• Tourist Agency • Seattle, WA	• 03/2022 • <a href='https://alextorreswa.github.io/CozumelTours/'>Web page</a> • <a href='https://github.com/alextorreswa/CozumelTours'>Git Hub</a> <br/>• Centro Familiar Cristiano • Seattle, WA	• 11/2021 • <a href='https://cfcwa.com/'>Web page</a> <br/>• Orkid Web Pet Store • Seattle, WA	11/2018"],
+const projects =  [["Web Development","Designed, built, and developed a websites using WordPress, Shopify, HTML, CSS, JavaScript, Bootstrap.","• Portfolio • Seattle, WA	• 04/2022 • <a href='https://alextorreswa.github.io/portfolio/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/portfolio' target='_blank'>Git Hub</a> <br/> • Task List Web Application • Washington DC	• 03/2022 • <a href='https://alextorreswa.github.io/taskList/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/taskList' target='_blank'>Git Hub</a> <br/>• Tourist Agency • Seattle, WA	• 03/2022 • <a href='https://alextorreswa.github.io/CozumelTours/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/CozumelTours' target='_blank'>Git Hub</a> <br/>• Centro Familiar Cristiano • Seattle, WA	• 11/2021 • <a href='https://cfcwa.com/' target='_blank'>Web page</a> <br/>• Orkid Web Pet Store • Seattle, WA	11/2018"],
                   ["Databases and Web Application","Design and build of relational databases with forms, SQL queries, reports, web forms, dashboards. Collect data, Analysis and Visualization","• Administrative System Information • Perenco Oil Company • 06/2015 <br/>• Maintenance Database  • Perenco Oil Company • 12/2007 <br/>• Corporate Social Responsibility Database • Perenco Oil Company • 12/2006 <br/>• Medical Appointments Application • Capresoca IPS • 06/2003"]];
-                     
+const skills = ["DATA ANALYSIS","DATA CLEANSING","SQL","R PROGRAMMING","RSTUDIO","SPREADSHEETS","TABLEAU","DATA COLLECTION","METADATA","DATA ETHICS","HTML","CSS","JAVASCRIPT","BOOTSTRAP","VBA","MS ACCESS","MS EXCEL","ASP.NET","SHOPIFY","WORDPRESS","GITHUB","COREL SUIT","SCRUM","BASH","SAP","BILINGUAL","SPANISH"];                   
+let skillsShuffle =  shuffle(skills);
+//console.log(skillsShuffle);
+let matrix = [];
+let gameY = 0, gameX = 0;
+
+/////////////////////////////////////////////////////////////////////////////////////
+//                      GAME SKILLS
+/////////////////////////////////////////////////////////////////////////////////////
+
+function shuffle(array) {
+   let currentIndex = array.length,  randomIndex;
+ 
+   // While there remain elements to shuffle...
+   while (currentIndex != 0) {
+ 
+     // Pick a remaining element...
+     randomIndex = Math.floor(Math.random() * currentIndex);
+     currentIndex--;
+ 
+     // And swap it with the current element.
+     [array[currentIndex], array[randomIndex]] = [
+       array[randomIndex], array[currentIndex]];
+   }
+ 
+   return array;
+ }
+
+function FillMatrix() { 
+   for(let i=0;i<=70;i++) {
+      matrix[i] = ["∙"];
+      for(let j=0;j<=13;j++) {
+      matrix[i].push("∙");         
+      }
+   }
+}
+ 
+function Matrix() {
+   let x=0,y=1; 
+   let str = "";
+   for(let i=0; i<skillsShuffle.length; i++) {
+      str = skillsShuffle[i].split(''); 
+
+      if(skillsShuffle[i+1]!==undefined && (str.length+skillsShuffle[i+1].length<=14)){
+         str.push('∙');
+         str.push.apply(str,skillsShuffle[i+1].split(''))
+         //console.log(str);         
+         i++;
+      }        
+
+      for(j in str) {
+         matrix[y][x] = str[j];
+         x++;       
+      }
+      x=0;
+      y=y+2;           
+   }
+
+}
+FillMatrix();
+Matrix();
+//for(i in matrix) 
+renderMatrix(gameY);
+
+
+function renderMatrix(start) {
+   let cad = "";
+   for(index=start;index<=start+11;index++) {
+      cad = matrix[index].join('') + '<br/>' + cad;
+   }   
+   document.getElementById("game").innerHTML = cad;
+}
+
+document.addEventListener('keydown', (event) => {
+   const keyName = event.key;
+   if(event.key == 'ArrowUp'){   
+      alert("hola");      
+      gameY++;
+      renderMatrix(gameY);   
+   } 
+
+ });
+
+
+
+// console.log(matrix);
+//Matrix();
+
+/////////////////////////////////////////////////////////////////////////////////////
+//                      EVENT HANDLE
+/////////////////////////////////////////////////////////////////////////////////////
+
 document.getElementById("profilePhoto").onmouseenter = function() {profilePhotoOME()};
 document.getElementById("profilePhoto").onmouseleave = function() {profilePhotoOML()};
 document.getElementById("profilePhoto").onmouseup = function() {profilePhotoClick()};
@@ -26,6 +117,9 @@ document.getElementById("experience").onmouseup = function() {experienceClick()}
 document.getElementById("arrowDown").onmouseup = function() {arrowDownClick()};
 document.getElementById("arrowUp").onmouseup = function() {arrowUpClick()};
 document.getElementById("project").onmouseup = function() {projectClick()};
+document.getElementById("resume").onmouseup = function() {resumeClick()};
+
+
 
 ////////////////////////////////////////////////////////////////
 //                      CHANGE PHOTO PROFILE
@@ -105,6 +199,7 @@ function renderExp() {
    }
 }
 
+
 /////////////////////////////////////////////////////  
 //                   PROJECTS INFO
 /////////////////////////////////////////////////////
@@ -169,6 +264,10 @@ function arrowUpClick() {
 ////////////////////////////////////////////////
 //                   SUPPORT FUNCTIONS 
 ///////////////////////////////////////////////
+
+function resumeClick(){
+   window.open("./resume.pdf");
+}
 
 function closeClick() {
    i = 0;
