@@ -203,7 +203,6 @@ document.getElementById("arrowDown").onmouseup = function() {arrowDownClick()};
 document.getElementById("arrowUp").onmouseup = function() {arrowUpClick()};
 document.getElementById("project").onmouseup = function() {projectClick()};
 document.getElementById("resume").onmouseup = function() {resumeClick()};
-document.getElementById("game").onmouseenter = function() {showInstructions()};
 
 
 ////////////////////////////////////////////////////////////////
