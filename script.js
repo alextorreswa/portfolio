@@ -22,7 +22,7 @@ skillsShuffle.unshift("AVOID∙∙∙LETTERS","∙∙∙∙∙∙AND∙∙∙∙
 //console.log(skillsShuffle);
 let matrix = [];
 let gameY = 0, gameX = 7;
-const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst"];
+const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst","Web programmer","Programmer","Web specialist"."Junior software engineer","JavaScript developer","Front-end developer",".Net developer","Web developer","Associate developer",];
 let positionInd = 0;
 /////////////////////////////////////////////////////////////////////////////////////
 //                      GAME SKILLS
