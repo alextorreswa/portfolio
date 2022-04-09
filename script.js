@@ -22,7 +22,7 @@ skillsShuffle.unshift("AVOID∙∙∙LETTERS","∙∙∙∙∙∙AND∙∙∙∙
 //console.log(skillsShuffle);
 let matrix = [];
 let gameY = 0, gameX = 7;
-const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst","Web programmer","Programmer","Web specialist"."Junior software engineer","JavaScript developer","Front-end developer",".Net developer","Web developer","Associate developer",];
+const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst","Web programmer","Programmer","Web specialist","Junior software engineer","JavaScript developer","Front-end developer",".Net developer","Associate developer",];
 let positionInd = 0;
 /////////////////////////////////////////////////////////////////////////////////////
 //                      GAME SKILLS
@@ -377,6 +377,9 @@ function closeClick() {
 }
 
 function hideTitles() {
+   document.getElementById("textScreenDetailTitle").innerHTML="";
+   document.getElementById("textScreenDetailSubTitle").innerHTML="";      
+   document.getElementById("textScreenDetailParag").innerHTML="";    
    document.getElementById("name").style.visibility = "hidden";
    document.getElementById("project").style.visibility = "hidden";
    document.getElementById("resume").style.visibility = "hidden";
