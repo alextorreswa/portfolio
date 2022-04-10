@@ -91,7 +91,6 @@ h4 {
   grid-row: 7 / 10;
   align-self: center;   
   text-align: center;  
-
  }
 
 .two:hover {
@@ -198,12 +197,9 @@ h4 {
 
 .thirteen {
   display: inline;
-  /* visibility: hidden; */
   grid-row: 7 / 12;
   grid-column: 12 / 14;
   margin-right: 45px;
-  /* border-style: solid;  
-  border-color: aqua; */
 }
 
 
@@ -353,6 +349,217 @@ h6 {
   display: inline;
 }
 
+.up {
+  display: inline;
+  visibility: hidden; 
+  grid-row: 14 / 14;
+  grid-column: 12 / 12;
+}
+
+.down {
+  display: inline;
+  visibility: hidden;
+  grid-row: 15 / 15;
+  grid-column: 12 / 12;
+}
+
+.right {
+  display: inline;
+  visibility: hidden;
+  grid-row: 15 / 15;
+  grid-column: 13 / 13;
+}
+
+.left {
+  display: inline;
+  visibility: hidden;
+  grid-row: 15 / 15;
+  grid-column: 11 / 11;
+}
+
+@media screen and (max-width: 700px) {
+  .wrapper {
+    display: grid;
+    border-style: solid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 2px;
+    width: 100vw;
+    height: 100vh;
+    background-size:auto;
+    background-position: 43% 10%;
+    background-image: url('./background.jpg');
+    border-radius: 10px;   
+  }
+
+  .one {
+    border-style: solid;
+    border-color: aqua;
+    grid-column: 2 / 16;
+    grid-row: 2 / 16;
+    border-radius: 10px;
+    background-color: rgba(0,0,0, 70%);
+  }
+  .two {
+    grid-column: 2 / 16;
+    grid-row: 5 / 7;
+    align-self: center;   
+    text-align: center;  
+   }
+   .subtitle {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: small;
+  }
+
+   h1 {
+    color: white;    
+    font-family: "Yellowtail", sans-serif;
+    font-weight: 300;  
+    font-size: 12vw;  
+    animation: pulsate 0.11s ease-in-out infinite alternate;      
+  }
+  .three {
+    grid-row: 2 / 5;
+    grid-column: 2 / 16;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;    
+  }
+  .five {
+    border-style: solid;
+    border-color: red;
+    grid-column: 8/12;
+    grid-row: 7/9;
+    display: block;
+    /* margin: 20px 10px;  */
+    border-radius: 5px;
+    text-align: center;  
+    color: white;   
+    background-size:90%;
+    background-position: 47% 50%;
+    background-image: url('./projects.png'); 
+    box-shadow: 2px 2px 2px 1px rgba(235, 0, 0, 0.658);   
+  }
+
+  .six {
+    border-style: solid;
+    border-color: rgb(70, 252, 70);
+    grid-column: 12/15;
+    grid-row: 7/9;
+    display: block;
+    border-radius: 5px;
+    text-align: center;  
+    margin-right: 15px;
+    color: white;   
+    background-size:220%;
+    background-position: 19% 46%;
+    background-image: url('./resume.png');
+    box-shadow: 2px 2px 2px 1px rgba(69, 180, 69, 0.658);
+  }
+
+  .seven {
+    border-style: solid;
+    border-color: yellow;
+    grid-row: 7 / 9;
+    grid-column: 3/8;
+    border-radius: 5px; 
+    /* margin: 20px 10px;  */
+    text-align: center; 
+    background-size:110%;
+    background-position: 40% 50%;
+    background-image: url('./experience.png');   
+    box-shadow: 2px 2px 2px 1px rgba(252, 228, 11, 0.658);
+    margin-left: 15px;
+    padding-left: 15px;
+  }
+
+  .eigth {
+    display: block;
+    grid-row: 9 / 16;
+    grid-column: 14 / 15;
+    /* margin-right:20px;
+    margin-top: 20px; */
+    text-align: right;
+  }
+
+  .nine {
+    grid-row: 5 / 16;
+    grid-column: 2 / 16;
+    margin: 10px;
+  }
+
+  .ten {
+    display: inline;
+    visibility: hidden;
+    grid-row: 5 / 6;
+    grid-column: 14 / 15;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  h6 {
+    color: white;    
+    font-family: "Yellowtail", sans-serif;
+    font-weight: 70;  
+    font-size: 8vw;    
+    animation: pulsate 0.11s ease-in-out infinite alternate;      
+  }
+
+  .eleven {
+    display: inline;
+    visibility: hidden;
+    grid-row: 14 / 14;
+    grid-column: 9 / 9;
+  }
+  
+  .twelve {
+    display: inline;
+    visibility: hidden;
+    grid-row: 15 / 15;
+    grid-column: 9 / 9;
+  }
+
+  .thirteen {
+    display: inline;
+    grid-row: 9 / 13;
+    grid-column: 4 / 14;
+  }
+
+  .up {
+    display: inline;
+    visibility: visible; 
+    grid-row: 14 / 14;
+    grid-column: 12 / 12;
+  }
+  
+  .down {
+    display: inline;
+    visibility: visible; 
+    grid-row: 15 / 15;
+    grid-column: 12 / 12;
+  }
+
+  .right {
+    display: inline;
+    visibility: visible; 
+    grid-row: 15 / 15;
+    grid-column: 13 / 13;
+  }
+  
+  .left {
+    display: inline;
+    visibility: visible; 
+    grid-row: 15 / 15;
+    grid-column: 11 / 11;
+  }
+}
+
+
 @keyframes blink {
   50% {
     opacity: 0;
@@ -391,3 +598,4 @@ h6 {
     0 0 140px #5271ff;
   }
 }
+
