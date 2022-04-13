@@ -414,7 +414,13 @@ function hideTitles() {
    document.getElementById("experience").style.visibility = "hidden";  
    document.getElementById("game").style.visibility = "hidden";   
    document.getElementById("gameCursor").style.visibility = "hidden";  
-   document.getElementById("icos").style.visibility = "hidden";              
+   document.getElementById("icos").style.visibility = "hidden";
+
+   document.getElementById("arrowUp2").style.visibility = "hidden";
+   document.getElementById("arrowDown2").style.visibility = "hidden"; 
+   document.getElementById("arrowRight2").style.visibility = "hidden";
+   document.getElementById("arrowLeft2").style.visibility = "hidden";    
+
 }
 
 function showTitles() {
@@ -428,5 +434,11 @@ function showTitles() {
    document.getElementById("experience").style.visibility = "visible"; 
    document.getElementById("game").style.visibility = "visible";   
    document.getElementById("gameCursor").style.visibility = "visible";  
-   document.getElementById("icos").style.visibility = "visible";            
+   document.getElementById("icos").style.visibility = "visible";  
+   if (screen.width <=700) {
+   document.getElementById("arrowUp2").style.visibility = "visible";
+   document.getElementById("arrowDown2").style.visibility = "visible"; 
+   document.getElementById("arrowRight2").style.visibility = "visible";
+   document.getElementById("arrowLeft2").style.visibility = "visible";       
+   }   
 }
