@@ -205,16 +205,9 @@ h4 {
   text-align: right;
 }
 
-/* .nine {
+.nine {
   grid-row: 7 / 12;
   grid-column: 6 / 13;
-  margin: 15px;
-  margin-right: 0px;
-} */
-
-.nine {
-  grid-row: 13 / 18;
-  grid-column: 8 / 10;
   margin: 15px;
   margin-right: 0px;
 }
