@@ -3,9 +3,10 @@ var i=0,j=0,k=0;
 var speed=40;
 var arrowOption = "exp";
 var expi = 0, proji = 0;
-const summary = "Hello! My name is Alex Torres. I am pursuing the Google Data Analytics Certificate. Prior to this, I got a JavaScript Developer certificate from W3Schools. Also, I studied Systems Engineering and Business. In my previous experience I resolved management problems. To achieve this, I not only use my management skills also I developed applications and tools that use data to make decisions. Now, I am working to upgrade my professional skills because I’m Interested to excel as a developer or data analyst.";
+const summary = "Hello! My name is Alex Torres. I am a Google Data Analytics Certificate and JavaScript Developer certificate. Also, I am doing a bootcamp in data engineering. Prior to this, I studied Systems Engineering and Business. In my previous experience I resolved management problems and I developed applications and tools that use data to make analysis and drive decisions. Now, I am working to upgrade my professional skills because I’m Interested to excel as a Data Engineer, Data Analyst or Developer.";
 const experience = "--------EXPERIENCE-------";
-const experiences = [["Web developer - Freelancer","Volar, Seattle, WA","01/2021 - Present","• Web developer focused on the development of new businesses, e-commerce and engaging clients."],
+const experiences = [["Data Scientist Intern","Dallas, TX","05/2022 - Present","• Use of real world data sets to extract data in unstructured format and store in structured format. (Python, JSON, GitHub, Regular Expressions - RegEx)"],
+                     ["Web developer - Freelancer","Volar, Seattle, WA","01/2021 - Present","• Web developer focused on the development of new businesses, e-commerce and engaging clients."],
                      ["Installer","Zuber Polymers, Seattle, WA","04/2019 - 11/2020","• Technical installation of waterproofing products for more than 50 construction projects in expensive houses and commercial buildings in Seattle, Bellevue, Kirkland and Mercer Island with a billing of more than $2.000.000 with high quality, manual skills, project management and met deadlines."],
                      ["Secretary of Transit","City Council, Yopal, Colombia","09/2017 - 12/2017","• Generated recommendations across accident rates by analyzing and translating data into actionable insights and statistics that allowed the reduction by 15%. <br/>• Created and coordinated the local road safety committee to reduce accident rates."],
                      ["Professional Administrative and Financial","EAAAY, Yopal, Colombia","02/2017 - 06/2017","• I managed the purchasing and supply process with 100% effectiveness of the materials and services requerided. <br/>• Developed indicators and reports to understand, simplify, statistically analyze, and effectively interpret data and report problems through written and graphical formats (Advanced Excel, Pivot Tablets, Formulas, SQL, Databases)."],
@@ -16,13 +17,13 @@ const experiences = [["Web developer - Freelancer","Volar, Seattle, WA","01/2021
 const project = "--------PROJECTS--------";
 const projects =  [["Web Development","Designed, built, and developed a websites using WordPress, Shopify, HTML, CSS, JavaScript, Bootstrap.","• Portfolio • Seattle, WA	• 04/2022 • <a href='https://alextorreswa.github.io/portfolio/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/portfolio' target='_blank'>Git Hub</a> <br/> • Task List Web Application • Washington DC	• 03/2022 • <a href='https://alextorreswa.github.io/taskList/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/taskList' target='_blank'>Git Hub</a> <br/>• Tourist Agency • Seattle, WA	• 03/2022 • <a href='https://alextorreswa.github.io/CozumelParadiseTours/' target='_blank'>Web page</a> • <a href='https://github.com/alextorreswa/CozumelParadiseTours' target='_blank'>Git Hub</a> <br/>• Centro Familiar Cristiano • Seattle, WA	• 11/2021 • <a href='https://cfcwa.com/' target='_blank'>Web page</a> <br/>• Orkid Web Pet Store • Seattle, WA	11/2018"],
                   ["Databases and Web Application","Design and build of relational databases with forms, SQL queries, reports, web forms, dashboards. Collect data, Analysis and Visualization","• Administrative System Information • Perenco Oil Company • 06/2015 <br/>• Maintenance Database  • Perenco Oil Company • 12/2007 <br/>• Corporate Social Responsibility Database • Perenco Oil Company • 12/2006 <br/>• Medical Appointments Application • Capresoca IPS • 06/2003"]];
-const skills = ["DATA∙ANALYSIS","DATA∙CLEANSING","SQL","R∙PROGRAMMING","RSTUDIO","SPREADSHEETS","TABLEAU","DATA∙COLLECTION","METADATA","DATA∙ETHICS","HTML","CSS","JAVASCRIPT","BOOTSTRAP","VBA","MS∙ACCESS","MS∙EXCEL","ASP∙NET","SHOPIFY","WORDPRESS","GITHUB","COREL∙SUIT","SCRUM","BASH","SAP","BILINGUAL","SPANISH"];                   
+const skills = ["PYTHON", "PANDAS", "SQL", "DATA∙ANALYSIS","DATA∙CLEANSING","SQL","R∙PROGRAMMING","RSTUDIO","SPREADSHEETS","TABLEAU","DATA∙COLLECTION","METADATA","DATA∙ETHICS","HTML","CSS","JAVASCRIPT","BOOTSTRAP","VBA","MS∙ACCESS","MS∙EXCEL","ASP∙NET","SHOPIFY","WORDPRESS","GITHUB","COREL∙SUIT","SCRUM","BASH","SAP","BILINGUAL","SPANISH"];                   
 let skillsShuffle =  shuffle(skills);
 skillsShuffle.unshift("AVOID∙∙∙LETTERS","∙∙∙∙∙∙AND∙∙∙∙∙∙","USE∙∙THE∙ARROWS","<∙∙∙GO∙∙UP!∙∙∙>","PLAY∙THIS∙GAME!","KNOW∙∙MY∙SKILLS");
 //console.log(skillsShuffle);
 let matrix = [];
 let gameY = 0, gameX = 7;
-const positions = ["Web Developer","Data Developer","Daya Analyst","Data Base Develper","SQL Developer","Business Analyst","Web programmer","Programmer","Web specialist","Junior software engineer","JavaScript developer","Front-end developer",".Net developer","Associate developer",];
+const positions = ["Data Engenieer", "Web Developer","Data Developer","Daya Analyst","Data Base Developer","SQL Developer","Web Programmer","Programmer","Software Engineer","JavaScript developer","Front-end Developer"];
 let positionInd = 0;
 /////////////////////////////////////////////////////////////////////////////////////
 //                      GAME SKILLS
@@ -186,7 +187,7 @@ document.addEventListener('keydown', (event) => {
    if(matrix[gameY][gameX]=="*") {
       Swal.fire({
          icon: 'success',
-         title: 'Good Job',
+         title: 'You won! Good Job',
          text: 'Your company could get an excellent professional with my skills!',
        })
       gameY = 0, gameX = 7;
@@ -230,7 +231,7 @@ document.getElementById("arrowUp2").onmouseup = function() {arrowUp2()};
 document.getElementById("arrowDown2").onmouseup = function() {arrowDown2()};
 document.getElementById("arrowRight2").onmouseup = function() {arrowRight2()};
 document.getElementById("arrowLeft2").onmouseup = function() {arrowLeft2()};
-
+document.getElementById("aboutmeid").onmouseup = function() {profilePhotoClick()};
 
 
 ////////////////////////////////////////////////////////////////
@@ -419,7 +420,8 @@ function hideTitles() {
    document.getElementById("arrowUp2").style.visibility = "hidden";
    document.getElementById("arrowDown2").style.visibility = "hidden"; 
    document.getElementById("arrowRight2").style.visibility = "hidden";
-   document.getElementById("arrowLeft2").style.visibility = "hidden";    
+   document.getElementById("arrowLeft2").style.visibility = "hidden";   
+   document.getElementById("aboutmeid").style.visibility = "hidden";     
 
 }
 
@@ -434,7 +436,8 @@ function showTitles() {
    document.getElementById("experience").style.visibility = "visible"; 
    document.getElementById("game").style.visibility = "visible";   
    document.getElementById("gameCursor").style.visibility = "visible";  
-   document.getElementById("icos").style.visibility = "visible";  
+   document.getElementById("icos").style.visibility = "visible"; 
+   document.getElementById("aboutmeid").style.visibility = "visible";      
    if (screen.width <=700) {
    document.getElementById("arrowUp2").style.visibility = "visible";
    document.getElementById("arrowDown2").style.visibility = "visible"; 
